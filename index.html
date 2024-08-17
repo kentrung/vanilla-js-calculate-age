@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Javascript Project</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="mt-5 mb-3">Nhập năm sinh của bạn</h1>
+    <div class="input-group mb-3">
+      <input type="text" class="form-control">
+      <div class="input-group-append">
+        <button class="btn btn-primary">Tính tuổi</button>
+      </div>
+    </div>
+    <p class="text-muted">(Nhập năm sinh vào ô input ở trên và click vào button để tính tuổi)</p>
+    <p>
+      <a href="https://viblo.asia/p/vanilla-js-tinh-tuoi-oOVlYnen58W" target="_blank">https://viblo.asia/p/vanilla-js-tinh-tuoi-oOVlYnen58W</a>
+    </p>
+    <p id="result1"></p>
+    <p id="result2"></p>
+    <p id="result3"></p>
+  </div>
+
+  <script>
+    const ipnElement = document.querySelector('input')
+    const btnElement = document.querySelector('button')
+    const resultElement1 = document.querySelector('#result1')
+    const resultElement2 = document.querySelector('#result2')
+    const resultElement3 = document.querySelector('#result3')
+
+    btnElement.addEventListener('click', calculateAge)
+
+    function calculateAge() {
+      const yearOfBirth = parseInt(ipnElement.value)
+      const date = new Date()
+      const currentYear = date.getFullYear()
+      const age = currentYear - yearOfBirth
+      resultElement1.innerHTML = `Năm hiện tại: <b>${currentYear}</b>`
+      resultElement2.innerHTML = `Năm sinh: <b>${yearOfBirth}</b>`
+      resultElement3.innerHTML = `Tuổi của bạn: <b>${currentYear} - ${yearOfBirth} = ${age} tuổi</b>`
+    }
+  </script>
+</body>
+
+</html>
